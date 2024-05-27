@@ -3,7 +3,7 @@ import { Image, StyleSheet, View,Text } from 'react-native';
 export default function App() {
   return (
     <View>
-      <Text style={styles.titleContainer}> Petiano so sofre</Text>
+      <Text style={styles.titleContainer}> Petiano so sofreeeeeee e a bolsa atrasa!!!!!!!!</Text>
     </View>
   );
 }
