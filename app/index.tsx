@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Platform, View,Text } from 'react-native';
+import { Image, StyleSheet, View,Text } from 'react-native';
 
 export default function App() {
   return (
@@ -12,5 +12,5 @@ const styles = StyleSheet.create({
   titleContainer: {
     fontSize:30,
   },
-  
+
 });
