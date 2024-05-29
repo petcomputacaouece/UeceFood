@@ -33,6 +33,9 @@ export const Mensagem= styled.Text `
 export const LoadIndicator = styled.ActivityIndicator.attrs({
     color:'#fff',
     size: 50,}) ``;
+export const Botao= styled.Button `
+    background-color: #fff;
+    `;
 
   
   

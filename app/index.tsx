@@ -1,7 +1,7 @@
-import { Inicial } from '@interfaces/Inicial';
 import { Loading } from '@/componentes/Loading';
 import { useFonts, Poppins_600SemiBold,Poppins_900Black } from '@expo-google-fonts/poppins';
 import { StatusBar } from 'react-native';
+import { Routes } from '@/src/routes';
 
 
 export default function App() {
@@ -10,8 +10,8 @@ export default function App() {
   
   return (
     <>
-    <StatusBar barStyle='dark-content' backgroundColor='transparent' translucent />
-    {carregarFonts ? <Inicial /> : <Loading/ >}  
+    
+    {carregarFonts ? <Routes /> : <Loading/ >}  
     </>
     
   );
