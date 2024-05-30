@@ -9,7 +9,7 @@ export const ContainerLogin = styled.View `
     flex:1;
     background-color: #fff;
     width: 400px;
-    height: 772px;
+    //height: 772px;
     top: 120px;
     border-radius: 62px;
     align-items: center;
@@ -20,7 +20,8 @@ export const ContainerCriarConta = styled.View `
     top: 1px;
 `;
 export const MessagemLogin = styled.Text`
-    font-family: 'Poppins_900Black';
+    font-family: 'Poppins_700Bold';
+    color: #00214E;
     font-size: 20px;
     font-weight: 1000;
     line-height: 200px;
@@ -40,7 +41,6 @@ export const TextInputEmail = styled.TextInput`
     width: 340px;
     height: 50px;
     padding: 10px;
-    border-width: 1px;
     border-color: #ccc;
     border-radius: 62px;
     font-size: 16px;
@@ -51,14 +51,11 @@ export const TextInputEmail = styled.TextInput`
 
 export const TextInputSenha = styled.TextInput`
     width: 340px;
-    height: 50px;
     padding: 10px;
-    border-width: 1px;
     border-color: #ccc;
     border-radius: 62px;
     font-size: 16px;
     background-color: #F5F5F5;
-    margin-bottom: 25px; 
     top: -50px;
 `;
 
@@ -69,7 +66,7 @@ export const TouchableOpacityEntrar= styled.TouchableOpacity`
     padding: 10px;
     border-radius: 62px;
     width: 340px;
-    top: -40px;
+    margin-top: -20px;
 `;
 
 export const TextBotaoEntrar= styled.Text`
@@ -80,13 +77,9 @@ export const TextBotaoEntrar= styled.Text`
 `;
 
 export const TouchableOpacityEsqueciASenha= styled.TouchableOpacity`
-    align-items: left;
-    padding: 10px;
-    width: 160px;
-    height: 50px;
-    top: -40px;
     align-self: flex-start;
     margin-left: 25px;
+    margin-top: 15px;
 `;
 
 export const TextBotaoEsqueciASenha= styled.Text`

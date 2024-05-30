@@ -1,13 +1,20 @@
+import { Recuperacao } from '../Recuperacao';
 import {Container, TitleMarca, ContainerLogin, MessagemLogin, ButtonVoltar, TextButtonVoltar,
 TouchableOpacityEntrar, TextBotaoEntrar, TextInputEmail,TextInputSenha, TouchableOpacityEsqueciASenha, 
 TextBotaoEsqueciASenha, ContainerCriarConta, TouchableOpacityCriarConta, TextCriarConta, TextBotaoCriarConta} from './styles';
 import { Button, Text, TouchableOpacity, TextInput } from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
-
-export function Login(props){
-
+export function Login(){
+    const navigation= useNavigation();
     function telaInicial(){
-        props.navigation.navigate('inicial');
+        navigation.navigate('inicial');
+    }
+    function telaRecuperarSenha(){
+        navigation.navigate('recuperacao');
+    }
+    function telaCadastrarLoja(){
+        navigation.navigate('cadastroLoja');
     }
     return(
         <Container>
@@ -32,7 +39,7 @@ export function Login(props){
                     </TextBotaoEntrar>
                 </TouchableOpacityEntrar>
 
-                <TouchableOpacityEsqueciASenha>
+                <TouchableOpacityEsqueciASenha onPress={telaRecuperarSenha}>
                     <TextBotaoEsqueciASenha>
                         Esqueceu sua senha?
                     </TextBotaoEsqueciASenha>
@@ -44,7 +51,7 @@ export function Login(props){
                         Ainda não tem conta?
                     </TextCriarConta>
 
-                    <TouchableOpacityCriarConta>
+                    <TouchableOpacityCriarConta onPress={telaCadastrarLoja}>
                         <TextBotaoCriarConta>
                             Criar Conta!
                         </TextBotaoCriarConta>

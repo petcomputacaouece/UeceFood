@@ -1,19 +1,33 @@
-import { Image, StyleSheet, View,Text } from 'react-native';
+import styled from  'styled-components';
+import { Container, ImgAddLoja,IconAdd, IconLoja, Input, ContainerForms, ButtonCadastrar, TextBotao } from './styles';
+import { HeaderHome } from '@/src/componentes/HeaderHome';
 
 export function Cadastro() {
+
   return (
-    <View>
-      <Text style={styles.titleContainer}> Tela de cadastro</Text>
-     
-    </View>
+   <Container>
+      <HeaderHome showTextCabecalho={true} />
+      <ImgAddLoja>
+        <IconLoja/> 
+        <IconAdd/>
+      </ImgAddLoja>
+
+      <ContainerForms>
+
+        <Input placeholder="Nome do estabelecimento"/>
+        <Input placeholder="Endereço"/>
+        <Input placeholder="Tipo de Estabelecimento"/>
+        <Input placeholder="CNPJ ou CPF"/>
+        <Input placeholder="Email"/>
+        <Input placeholder="Senha"/>
+      <ButtonCadastrar>
+        <TextBotao> Cadastrar</TextBotao>
+      </ButtonCadastrar>
+        
+      </ContainerForms>
+
+   </Container>
   );
 }
 
-const styles = StyleSheet.create({
-  titleContainer: {
-    fontSize:30,
-    color:"#F3A5AA"
-  },
-
-});
   
