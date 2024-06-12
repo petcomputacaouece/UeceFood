@@ -7,7 +7,7 @@ type Props={
     showTextCabecalho?: boolean; // ? diz q ela é opcional e : diz o tipo
 }
 
-export function HeaderHome({showTextCabecalho }:Props){
+export function HeaderInicial({showTextCabecalho }:Props){
 
   const navigation= useNavigation();
 

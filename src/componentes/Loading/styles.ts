@@ -9,6 +9,6 @@ background-color:#fff ;
 `;
 
 export const LoadIndicator = styled.ActivityIndicator.attrs({
-    color:'#fff',
+    color:'#f4ff',
     size: 40
 }) ``;

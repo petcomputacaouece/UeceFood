@@ -1,11 +1,11 @@
 import { Image, StyleSheet, View,Text } from 'react-native';
 import { Container,ButtonEnviar,TextBotao,Content ,Texto,Input, TextoInformativo } from './styles';
-import { HeaderHome } from '@/src/componentes/HeaderHome';
+import { HeaderInicial } from '@/src/componentes/HeaderInicial';
 
 export function Recuperacao() {
   return (
     <Container>
-      <HeaderHome showTextCabecalho={false}/> 
+      <HeaderInicial showTextCabecalho={false}/> 
       <Content>
       <Texto> Informe seu E-mail cadastrado</Texto>
 

@@ -1,6 +1,6 @@
 import styled from  'styled-components';
 import { Container, ImgAddLoja,IconAdd, IconLoja, Input, ContainerForms, ButtonCadastrar, TextBotao} from './styles';
-import { HeaderHome } from '@/src/componentes/HeaderHome';
+import { HeaderInicial } from '@/src/componentes/HeaderInicial';
 import { Platform, ScrollView } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
@@ -9,7 +9,7 @@ export function Cadastro() {
 
   return (
    <Container>
-      <HeaderHome showTextCabecalho={true} />
+      <HeaderInicial showTextCabecalho={true} />
       <ImgAddLoja>
         <IconLoja/> 
         <IconAdd/>

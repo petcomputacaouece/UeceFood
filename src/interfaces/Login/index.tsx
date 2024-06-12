@@ -62,9 +62,7 @@ export function Login(){
 
             </ContainerLogin>
  
-            <ButtonVoltar onPress={telaInicial}>
-                <TextButtonVoltar>VOLTAR</TextButtonVoltar>
-            </ButtonVoltar> 
+      
 
         </Container>
     )

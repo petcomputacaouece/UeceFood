@@ -1,3 +1,4 @@
+import { Inventario } from "../interfaces/Inventario";
 
 export declare global{
     namespace ReactNavigation{
@@ -6,6 +7,11 @@ export declare global{
             inicial:undefined;
             recuperacao: undefined;
             cadastroLoja:undefined;
+            homeUser:undefined;
+            vendas:undefined;
+            inventario:undefined;
+            analytics:undefined;
+            configuracoes:undefined;
         }
     }
 }
