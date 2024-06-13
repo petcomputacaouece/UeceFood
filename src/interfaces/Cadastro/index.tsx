@@ -22,12 +22,28 @@ export function Cadastro() {
       >
         <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
           <ContainerForms>
-            <Input placeholder="Nome do estabelecimento"/>
-            <Input placeholder="Endereço"/>
-            <Input placeholder="Tipo de Estabelecimento"/>
-            <Input placeholder="CNPJ ou CPF"/>
-            <Input placeholder="Email"/>
-            <Input placeholder="Senha"/>
+            <Input 
+              placeholder="Nome do estabelecimento"
+            />
+            <Input 
+              placeholder="Endereço"
+            />
+            <Input 
+              placeholder="Tipo de Estabelecimento"
+            />
+            <Input 
+              placeholder="CNPJ ou CPF"
+              keyboardType="numeric"
+              maxLength={14}
+            />
+            <Input 
+              placeholder="Email"
+            />
+            <Input 
+              placeholder="Senha"
+              keyboardType="default"
+              secureTextEntry={true}
+            />
 
             <ButtonCadastrar>
               <TextBotao> Cadastrar</TextBotao>

@@ -5,7 +5,7 @@ import {AuthRoutes} from '@routes/auth.routes'
 export function Routes(){
     return(
         <>
-        <AppRoutes/>
-            </>
+        <AuthRoutes/>
+        </>
     );
 }

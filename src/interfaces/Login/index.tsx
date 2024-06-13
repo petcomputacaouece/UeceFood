@@ -32,6 +32,8 @@ export function Login(){
 
                 <TextInputSenha
                     placeholder="Senha"
+                    keyboardType="default"
+                    secureTextEntry={true}
                 />
                 
                 <TouchableOpacityEntrar>
