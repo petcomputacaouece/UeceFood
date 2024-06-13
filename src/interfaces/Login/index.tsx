@@ -7,8 +7,9 @@ import {useNavigation} from '@react-navigation/native';
 
 export function Login(){
     const navigation= useNavigation();
-    function telaInicial(){
-        navigation.navigate('inicial');
+ 
+    function homeUser(){
+        navigation.navigate('appRoutes');
     }
     function telaRecuperarSenha(){
         navigation.navigate('recuperacao');
@@ -36,7 +37,7 @@ export function Login(){
                     secureTextEntry={true}
                 />
                 
-                <TouchableOpacityEntrar>
+                <TouchableOpacityEntrar  onPress={homeUser}>
                     <TextBotaoEntrar>
                         Entrar
                     </TextBotaoEntrar>

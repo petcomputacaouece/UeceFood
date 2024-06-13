@@ -4,6 +4,8 @@ import {Inicial} from '@interfaces/Inicial';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 import { Recuperacao } from '@interfaces/Recuperacao';
 import { Cadastro } from '../interfaces/Cadastro';
+import { HomeUser } from '../interfaces/HomeUser';
+import { AppRoutes } from './app.routes';
 
 const {Navigator, Screen } = createNativeStackNavigator();
 
@@ -28,7 +30,10 @@ export function AuthRoutes(){
             name='cadastroLoja'
             component={Cadastro}
             />
-            
+                <Screen
+            name='appRoutes'
+            component={AppRoutes}
+            />
           
         </Navigator>
 

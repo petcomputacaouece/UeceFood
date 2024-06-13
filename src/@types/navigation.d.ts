@@ -12,6 +12,7 @@ export declare global{
             inventario:undefined;
             analytics:undefined;
             configuracoes:undefined;
+            appRoutes:undefined;
         }
     }
 }
