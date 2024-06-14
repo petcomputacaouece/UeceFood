@@ -6,6 +6,7 @@ export function HeaderHomeUser(){
     return(
         <Container>
               <StatusBar barStyle='dark-content' backgroundColor='transparent' translucent />
+              
               <ContainerImage>
             <Image source={require('@assets/logoLoja.png')}
                 style= {{}}

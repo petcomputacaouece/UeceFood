@@ -39,11 +39,11 @@ export const ButtonEnviar=styled.TouchableOpacity `
     `;
 export const TextBotao= styled.Text`
     color: #fff;
-    font-size: 15px;
+    size: 15px;
     font-family: 'Poppins_700Bold';
 `;
 export const TextoInformativo= styled.Text `
-    font-size: 12;
+    size: 12px;
     font-family: 'Poppins_400Regular';
     width: 300px;
     text-align: justify;

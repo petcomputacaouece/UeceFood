@@ -8,8 +8,6 @@ export const Container = styled.View `
 export const ContainerLogin = styled.View `
     flex:1;
     background-color: #fff;
-    width: 400px;
-    //height: 772px;
     top: 120px;
     border-radius: 62px;
     align-items: center;

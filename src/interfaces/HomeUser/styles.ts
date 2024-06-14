@@ -12,5 +12,5 @@ export const ShadowBox = styled.View`
     height: 180px;
     border-radius: 30px;
     background-color: #FDFDFD;
-    elevation: 10;
+    elevation: 5;
   `;

@@ -10,12 +10,14 @@ export const Container =  styled.View `
     `;
     export const ContainerImage= styled.View `
         background-color:#FDFDFD;
-        border-radius:80px;
-        padding: 8px;
+        border-radius:30px;
+        width: 53px;
+        height: 53px;
         align-items: center;
-        justify-content: flex-start;
-        margin-right: 20px;
+        justify-content:center;
+        margin-right: 15px;
         margin-left: 40px;
+        elevation: 5;
     `;
 
 export const TextWelcome= styled.Text `
