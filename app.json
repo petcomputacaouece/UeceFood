@@ -1,5 +1,9 @@
 {
   "expo": {
+    "jsEngine": "hermes",
+    "ios": {
+      "jsEngine": "jsc"
+    },
     "name": "UeceFood",
     "slug": "UeceFood",
     "version": "1.0.0",
@@ -12,25 +16,28 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "",
-        "backgroundColor": "#ffffff"
-      }
-    },
-    "web": {
-      "bundler": "metro",
-      "output": "static",
-      "favicon": ""
-    },
-    "plugins": [
-      "expo-router"
-    ],
-    "experiments": {
-      "typedRoutes": true
+    "sdkVersion": "51.0.0",
+    "entryPoint": ".vscode\\exponentIndex.js"
+  },
+  "ios": {
+    "supportsTablet": true
+  },
+  "android": {
+    "adaptiveIcon": {
+      "foregroundImage": "",
+      "backgroundColor": "#ffffff"
     }
-  }
+  },
+  "web": {
+    "bundler": "metro",
+    "output": "static",
+    "favicon": ""
+  },
+  "plugins": [
+    "expo-router"
+  ],
+  "experiments": {
+    "typedRoutes": true
+  },
+  "name": "uecefood"
 }

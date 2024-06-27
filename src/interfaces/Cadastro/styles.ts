@@ -1,6 +1,5 @@
 import styled from 'styled-components/native';
 import {Storefront,PlusCircle} from 'phosphor-react-native';
-import { Styled } from 'styled-components';
 import { useFonts } from '@expo-google-fonts/roboto';
 
 export const Container= styled.View`

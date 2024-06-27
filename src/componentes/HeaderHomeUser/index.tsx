@@ -1,8 +1,19 @@
-import {ButtonSearch, Container, ContainerImage, NomeLoja, TextWelcome,IconSearch} from './styles';
-import { Image,StatusBar, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import {ButtonSearch, Container, ContainerImage, NomeLoja, TextWelcome,IconSearch, ButtonSeta, IconSeta} from './styles';
+import { Image,StatusBar, View ,Text} from 'react-native';
+type Props = {
+    title: string;
+  }
 
+export function HeaderHomeUser({title}:Props){
+    const navigation= useNavigation();
 
-export function HeaderHomeUser(){
+    function inventario(){
+      navigation.navigate('inventario',{name:''});
+  }
+
+  
+
     return(
         <Container>
               <StatusBar barStyle='dark-content' backgroundColor='transparent' translucent />
@@ -16,9 +27,11 @@ export function HeaderHomeUser(){
 
             <View>
             <TextWelcome>Bem-Vindo</TextWelcome>
-            <NomeLoja>UECEANA</NomeLoja>
+            <TextWelcome>{title}</TextWelcome>
             </View>
-
+            <ButtonSeta onPress={inventario}>
+                    <IconSeta />
+                </ButtonSeta>
             <ButtonSearch> 
                 <IconSearch />
             </ButtonSearch>

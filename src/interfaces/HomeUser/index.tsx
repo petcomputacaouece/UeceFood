@@ -1,14 +1,15 @@
 import { HeaderHomeUser } from '@/src/componentes/HeaderHomeUser';
-import { Container, ShadowBox } from './styles';
+import { Container } from './styles';
 import {Text} from 'react-native';
 import { CriarCardapio } from '@/src/componentes/CriarCardapio';
+import { FloatingBox } from '@/src/componentes/FloatingBox';
 export  function HomeUser() {
   
     return (
         <Container>
             <HeaderHomeUser/>
             <CriarCardapio/>
-            <ShadowBox></ShadowBox>
+            <FloatingBox/>
         </Container>
     );
   

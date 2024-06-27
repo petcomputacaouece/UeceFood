@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import { MagnifyingGlass } from "phosphor-react-native";
+import { MagnifyingGlass,CaretLeft } from "phosphor-react-native";
 
 export const Container =  styled.View `
     background-color: #fff;
@@ -40,3 +40,11 @@ export const IconSearch= styled(MagnifyingGlass).attrs({
     color: '#00214E',
     weight: 'bold',
 })  `align-self:flex-end`;
+export const IconSeta=styled(CaretLeft).attrs({ 
+    size:36,
+    color: '#000',
+    weight: 'bold',
+}) ` `;
+export const ButtonSeta=styled.TouchableOpacity`
+    align-self:flex-end;
+    `;

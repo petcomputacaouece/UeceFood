@@ -1,5 +1,4 @@
 import { BlocoCabecalho,TextoCabecalho, IconSeta, ButtonSeta } from './styles';
-import{CaretLeft} from 'phosphor-react-native';
 import {useNavigation} from '@react-navigation/native';
 
 

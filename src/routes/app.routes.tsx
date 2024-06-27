@@ -12,19 +12,20 @@ import { Vendas } from '../interfaces/Vendas';
 import { Inventario } from '../interfaces/Inventario';
 import { Analytics } from '../interfaces/Analytics';
 import { Configuracoes } from '../interfaces/Configuracoes';
+import { CadProduto } from '../interfaces/CadProduto';
 
 const {Navigator, Screen} = createBottomTabNavigator();
 
 export function AppRoutes (){
-
+    
     return(
         <Navigator screenOptions={{
             headerShown: false, 
-            tabBarActiveTintColor:'#00214E',
+            tabBarActiveTintColor:'#0ad58e',
             tabBarStyle:{borderTopColor:'#ffe' , backgroundColor:'#fff'}
      }}>
             <Screen 
-            name= "Home"
+            name= "home"
             component={HomeUser}
             options={{
                 tabBarIcon: () => (
@@ -33,7 +34,7 @@ export function AppRoutes (){
             }}
             />
             <Screen 
-            name= "Vendas"
+            name= "vendas"
             component={Vendas}
             options={{
                 tabBarIcon: () => (
@@ -43,7 +44,7 @@ export function AppRoutes (){
             
             />
             <Screen 
-            name= "Inventário"
+            name= "inventario"
             component={Inventario}
             options={{
                 tabBarIcon: () => (
@@ -52,7 +53,7 @@ export function AppRoutes (){
             }}
             />
             <Screen 
-            name= "Analytics"
+            name= "analytics"
             component={Analytics}
             options={{
                 tabBarIcon: () => (
@@ -61,7 +62,7 @@ export function AppRoutes (){
             }}
             />
             <Screen 
-            name= "Configurações"
+            name= "configurações"
             component={Configuracoes}
             options={{
                 tabBarIcon: () => (
@@ -69,7 +70,12 @@ export function AppRoutes (){
                 )
             }}
             />
-            
+            <Screen 
+            name= "cadastrarProd"
+            component={CadProduto}
+            options={{  tabBarButton: ()=> (null)
+            }}
+            />
 
         </Navigator>
     );

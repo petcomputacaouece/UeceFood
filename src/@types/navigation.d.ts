@@ -1,4 +1,5 @@
 import { Inventario } from "../interfaces/Inventario";
+import { EmpresaStorageDTO } from "../storage/empresa/EmpresaStorageDTO";
 
 export declare global{
     namespace ReactNavigation{
@@ -7,11 +8,16 @@ export declare global{
             inicial:undefined;
             recuperacao: undefined;
             cadastroLoja:undefined;
+
             homeUser:undefined;
             vendas:undefined;
-            inventario:undefined;
+            inventario:{
+                name:string;
+            };
             analytics:undefined;
             configuracoes:undefined;
+            cadastrarProd:undefined;
+
             appRoutes:undefined;
         }
     }

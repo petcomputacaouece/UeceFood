@@ -12,6 +12,11 @@ const {Navigator, Screen } = createNativeStackNavigator();
 export function AuthRoutes(){
     return(
         <Navigator screenOptions={{headerShown: false }}>
+           
+            <Screen
+            name='cadastroLoja'
+            component={Cadastro}
+            />
             <Screen       //Primeira tela a ser mostrada
             name='inicial'
             component={Inicial}
@@ -26,14 +31,10 @@ export function AuthRoutes(){
             name='recuperacao'
             component={Recuperacao}
             />
-               <Screen
-            name='cadastroLoja'
-            component={Cadastro}
-            />
-                <Screen
-            name='appRoutes'
-            component={AppRoutes}
-            />
+             <Screen
+        name='appRoutes'
+        component={AppRoutes}
+        />
           
         </Navigator>
 

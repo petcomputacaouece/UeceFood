@@ -5,7 +5,7 @@ async function createDatabase() {
     const connectionConfig = {
         host: 'localhost', // ou o endereço do seu servidor MySQL
         user: 'root',      // substitua pelo seu usuário do MySQL
-        password: 'ca141200' // substitua pela sua senha do MySQL
+        password: 'S1234' // substitua pela sua senha do MySQL
     };
 
     // Cria uma conexão com o servidor MySQL
