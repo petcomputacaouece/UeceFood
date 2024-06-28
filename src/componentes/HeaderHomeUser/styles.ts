@@ -41,10 +41,12 @@ export const IconSearch= styled(MagnifyingGlass).attrs({
     weight: 'bold',
 })  `align-self:flex-end`;
 export const IconSeta=styled(CaretLeft).attrs({ 
-    size:36,
-    color: '#000',
+    size:32,
+    color: '#00214E',
     weight: 'bold',
-}) ` `;
+})  `align-self:flex-end`;
+
 export const ButtonSeta=styled.TouchableOpacity`
-    align-self:flex-end;
-    `;
+margin-left: auto;
+padding: 20px;
+`;

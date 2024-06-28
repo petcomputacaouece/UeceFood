@@ -12,7 +12,11 @@ const {Navigator, Screen } = createNativeStackNavigator();
 export function AuthRoutes(){
     return(
         <Navigator screenOptions={{headerShown: false }}>
-           
+               <Screen
+        name='appRoutes'
+        component={AppRoutes}
+        />
+          
             <Screen
             name='cadastroLoja'
             component={Cadastro}
@@ -31,11 +35,7 @@ export function AuthRoutes(){
             name='recuperacao'
             component={Recuperacao}
             />
-             <Screen
-        name='appRoutes'
-        component={AppRoutes}
-        />
-          
+         
         </Navigator>
 
     );

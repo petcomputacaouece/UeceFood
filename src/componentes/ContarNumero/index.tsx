@@ -1,36 +1,46 @@
 import React, { useState } from 'react';
-import { ContarNum , Button, ButtonText, CounterDisplay, CounterText } from './styles'; // ajuste o caminho conforme necessário
+import { TextInput, TouchableOpacity } from 'react-native';
+import { ContarNum, Button, ButtonText, CounterDisplay, CounterText } from './styles'; // Ajuste o caminho conforme necessário
 
-const ContarN = () => {
-  const [count, setCount] = useState(0); // estado inicial da conta
+const ContarNumero = ({ initialValue, onChange }) => {
+  const [count, setCount] = useState(initialValue || 0); // Estado inicial do contador
 
-  const incrementa = () => {   //função para incrementar de 1 em 1
-    setCount(count + 1);
+  const incrementa = () => {
+    const newCount = count + 1;
+    setCount(newCount);
+    onChange(newCount); // Chamada da função onChange para passar o novo valor
   };
 
-  const decrementa = () => { //função para diminuir de 1 em 1 e impedir que conte numeros negativos
+  const decrementa = () => {
     if (count > 0) {
-      setCount(count - 1);
+      const newCount = count - 1;
+      setCount(newCount);
+      onChange(newCount); // Chamada da função onChange para passar o novo valor
     }
   };
-
+  const handleInputChange = (text) => {
+    const numericValue = text.replace(/[^0-9]/g, '');
+    const newCount = numericValue ? parseInt(numericValue, 10) : 0;
+    setCount(newCount);
+    onChange(newCount); // Chamada da função onChange para passar o novo valor
+  };
   return (
-    <ContarNum >
+    <ContarNum>
       <Button onPress={decrementa}>
         <ButtonText>-</ButtonText>
       </Button>
       <CounterDisplay>
-        <CounterText>{count}</CounterText>
-      </CounterDisplay>
+      <TextInput 
+          keyboardType="numeric"
+          value={String(count)}
+          onChangeText={handleInputChange}
+        />      
+        </CounterDisplay>
       <Button onPress={incrementa}>
         <ButtonText>+</ButtonText>
       </Button>
-    </ContarNum >
+    </ContarNum>
   );
-}
+};
 
-export function ContarNumero() {
-  return (
-      <ContarN/>
-  );
-}
+export default ContarNumero;

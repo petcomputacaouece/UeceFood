@@ -6,9 +6,10 @@ import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/nativ
 import { useEffect, useState,useCallback} from 'react';
 import { FlatList } from 'react-native';
 import { produtoGetAll } from '@/src/storage/produto/produtoGetAll';
+import { ProdutoStorageDTO } from '@/src/storage/produto/ProdutoStorageDTO';
 
 export  function Inventario() {
-    const [produtos, setProdutos]= useState<string[]>([]);
+  const [produtos, setProdutos] = useState<ProdutoStorageDTO[]>([]);
     
     const navigation=useNavigation();
 
@@ -16,6 +17,7 @@ export  function Inventario() {
         try {
           const data= await produtoGetAll();
           setProdutos(data);
+          console.log('dados vindo de cad:',data)
         } catch (error) {
           console.log(error)
         }
@@ -33,19 +35,16 @@ export  function Inventario() {
 
     return (
         <Container>
-        <HeaderHomeUser title={'user'}/>
+        <HeaderHomeUser title={'user'} showCabecalho={false}/>
         <CriarCardapio/>
 
-
-        <FlatList 
-            data={produtos} 
-            keyExtractor={item => item}
-            renderItem={({item}) => 
-            (<FloatingBox 
-            title={item}/>) }>
-
-        </FlatList>
-        
+        <FlatList style={{marginBottom:-60}}
+                data={produtos} 
+                keyExtractor={(item, index) => `${item}-${index}`}
+                renderItem={({ item }) => (
+                    <FloatingBox nome={item.nome} custo={item.custo} preco={item.preco} precoMaq={item.precoMaq} quantidade={item.quantidade} />
+                )}
+            />
         <ButtonAdd onPress={adicionarProduto}>
             <IconPlus/>
         </ButtonAdd>

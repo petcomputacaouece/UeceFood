@@ -28,8 +28,7 @@ export const Text= styled.Text `
     font-family: "Poppins_600SemiBold";
     font-size: 13px;
     color: #00214E;
-    margin-top: 8px;
-    margin-bottom: 8px;
+    margin-top: 10px;
     flex-wrap: wrap;
 `;
 export const TextPreco= styled.Text `

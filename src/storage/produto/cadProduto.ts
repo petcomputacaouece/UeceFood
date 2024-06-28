@@ -3,16 +3,13 @@ import { ProdutoStorageDTO } from './ProdutoStorageDTO';
 import { PRODUTO_COLLECTION } from '../storageConfig';
 import { produtoGetAll } from './produtoGetAll';
 
-export async function cadProduto(newProduto: string){
-
-try { 
-    const storedProdutos= await produtoGetAll();
-    const storage=JSON.stringify([storedProdutos,newProduto]) 
-    //                             chave unica , oq sera guardado na chave                 
-    await AsyncStorage.setItem(PRODUTO_COLLECTION,storage); //JSON.stringfy converte objeto em texto
+export async function cadProduto(newProduto: ProdutoStorageDTO): Promise<void> {
+    try {
+        const storedProdutos = await produtoGetAll();
+        const updatedProdutos = [...storedProdutos, newProduto];
+        const storage = JSON.stringify(updatedProdutos); // Converte a coleção atualizada em string JSON
+        await AsyncStorage.setItem(PRODUTO_COLLECTION, storage); // Salva a coleção atualizada
+    } catch (error) {
+        throw error;
+    }
 }
- catch (error) {
-
-    throw error;
-
-}}

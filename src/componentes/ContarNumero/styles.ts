@@ -26,7 +26,7 @@ export const CounterDisplay = styled.View`
   padding-right: 20px;
 `;
 
-export const CounterText = styled.Text`
+export const CounterText = styled.TextInput`
   color: #00214E;
   font-size: 25px;
   font-weight: bold;

@@ -3,13 +3,14 @@ import {ButtonSearch, Container, ContainerImage, NomeLoja, TextWelcome,IconSearc
 import { Image,StatusBar, View ,Text} from 'react-native';
 type Props = {
     title: string;
+    showCabecalho: boolean
   }
 
-export function HeaderHomeUser({title}:Props){
+export function HeaderHomeUser({title,showCabecalho}:Props){
     const navigation= useNavigation();
 
     function inventario(){
-      navigation.navigate('inventario',{name:''});
+      navigation.navigate('inventario',{});
   }
 
   
@@ -29,12 +30,17 @@ export function HeaderHomeUser({title}:Props){
             <TextWelcome>Bem-Vindo</TextWelcome>
             <TextWelcome>{title}</TextWelcome>
             </View>
-            <ButtonSeta onPress={inventario}>
-                    <IconSeta />
-                </ButtonSeta>
+            {showCabecalho ? (  //se for verdadeiro mostrara o text de cadastrar
+           <ButtonSeta onPress={inventario}>
+           <IconSeta />
+       </ButtonSeta>
+        ) : (                      // se for falso mostrara o text de esqueci minha senha
             <ButtonSearch> 
-                <IconSearch />
-            </ButtonSearch>
+            <IconSearch />
+        </ButtonSearch>
+        )}
+           
+        
         </Container>
     );
 }
