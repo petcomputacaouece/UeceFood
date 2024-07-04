@@ -2,7 +2,7 @@ const express = require('express');
 
 const estabelecimentoRouter = require('./routes/registerEstabelecimento.js'); // Caminho para o arquivo registerEstabelecimento.js
 const funcionarioRouter = require('./routes/registerFuncionario.js'); // Caminho para o arquivo registerFuncionario
-const enderecoRouter = require('./routes/registEndereco.js'); // Caminho para o arquivo registerendereco.js
+const enderecoRouter = require('./routes/registerEndereco.js'); // Caminho para o arquivo registerendereco.js
 const produtoRouter = require('./routes/registerProduto.js'); // Caminho para o arquivo registerProduto.js
 const vendaRouter = require('./routes/registerVenda.js'); // Caminho para o arquivo registerVenda.js
 const userRouter = require('./routes/register.js'); // Caminho para o arquivo register.js
