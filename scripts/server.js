@@ -14,6 +14,7 @@ const port = 3000;
 // Middleware para analisar o corpo das requisições como JSON
 app.use(express.json());
 
+
 // Utiliza a rotas de registro
 app.use('/api', estabelecimentoRouter);
 app.use('/api', userRouter);
