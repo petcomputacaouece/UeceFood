@@ -10,7 +10,7 @@ module.exports = function (api) {
           alias: {  //sao os caminhos que seram encurtados
             '@assets': './src/assets',  
           //@nomeDaPasta: caminho do path dela
-            '@components': './src/components',
+            '@componentes': './src/componentes',
             '@routes': './src/routes',
             '@interfaces': './src/interfaces',
             '@storage': './src/storage',

@@ -6,7 +6,7 @@ export declare global{
     namespace ReactNavigation{
         interface RootParamList {
             login:undefined;      //coloca algum parametro se tiver
-            inicial:undefined;
+            Loading:undefined;
             recuperacao: undefined;
             cadastroLoja:undefined;
 

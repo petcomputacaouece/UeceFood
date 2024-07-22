@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Container, ImgAddLoja,IconAdd, IconLoja, Input, ContainerForms, ButtonCadastrar, TextBotao} from './styles';
 import { HeaderInicial } from '@/src/componentes/HeaderInicial';
-import { Platform, ScrollView } from 'react-native';
+import { Alert, Platform, ScrollView } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { cadEmpresa } from '@/src/storage/empresa/cadEmpresa';
-
+import { useNavigation } from '@react-navigation/native';
+import axios, {Axios} from 'axios'
 
 export function Cadastro() {
   const[nomeloja,setNomeLoja]= useState('');
@@ -14,26 +14,26 @@ export function Cadastro() {
   const[email,setEmail]= useState('');
   const[senha,setSenha]= useState('');
 
+  const navigation= useNavigation();
 
    async function cadastrarUsuario(){
     try {
-      console.log('entrou aqui');
-      const response = await fetch('http://127.0.0.1:8081/register-estabelecimento',{
-        method:'POST',
-        headers:{
-          'Accept': 'application/json',
-          'Content':'application/json',
-        },
-        body:JSON.stringify({nomeloja,endereco,tipo,CnpjCpf,email,senha})
-        
-      });
-      const data= response.json();
-      console.log(data);
-      console.log({nomeloja,endereco,tipo,CnpjCpf,email,senha});
-
-      //await cadEmpresa({nomeloja,endereco,tipo,CnpjCpf,email,senha})
+      //                             colocar a url do emulador e a porta 3000   
+      const response = await axios.post('http://192.168.0.12:3000/api/register-estabelecimento', {
+        Nome: nomeloja,
+        CNPJ_CPF: CnpjCpf, // Substitua pelo CNPJ ou CPF válido
+        TipoEstabelecimento: tipo,
+        Email: email,
+        Senha: senha
+    });
+    console.log('Response:', response.data);
+      Alert.alert(
+        "Sucesso",
+        "Cadastro realizado com sucesso!",
+        [{ text: "Voltar para login", onPress: () => navigation.navigate('login') }]
+      );
     } catch (error) {
-      console.log(error);
+      console.log("erro: ",error);
     }
     
  }

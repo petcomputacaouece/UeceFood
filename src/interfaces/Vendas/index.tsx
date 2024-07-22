@@ -4,7 +4,7 @@ export  function Vendas() {
   
     return (
         <Container>
-        <Text>Vendas</Text>
+        <Text></Text>
         </Container>
     );
   

@@ -4,7 +4,7 @@ export  function Analytics() {
   
     return (
         <Container>
-        <Text>Analytics</Text>
+        <Text></Text>
         </Container>
     );
   

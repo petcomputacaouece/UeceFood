@@ -3,11 +3,13 @@ import { Container ,ContainerLogo,Welcome,TitleMarca,Mensagem,LoadIndicator, Bot
 import {useNavigation} from '@react-navigation/native';
 import { useEffect } from 'react';
 
-export  function Inicial(props) {
+export  function Loading() {
+
+  const navigation= useNavigation();
 
   useEffect( ()=> {
     const timer = setTimeout(()=> {   //função que carregar por um tempo e faz algo
-      props.navigation.navigate('login'); //chamando a tela de login atraves de props
+     navigation.navigate('login'); //chamando a tela de login atraves de props
 
     },3000);    //ira pra tela de login apos 3 segundo
 
@@ -17,7 +19,7 @@ export  function Inicial(props) {
     
     <Container>
       <StatusBar 
-    barStyle='dark-content' backgroundColor='transparent' translucent />
+    barStyle='dark-content' backgroundColor='transparent'  translucent  />
     <ContainerLogo>
       <Image
         source={require('@assets/home.png')}

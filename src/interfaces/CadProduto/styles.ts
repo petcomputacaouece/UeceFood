@@ -7,7 +7,7 @@ export const Container= styled.View `
 export const Texto=styled.Text`
     font-family: 'Poppins_700Bold';
     margin-left: 35px;
-    margin-top: 35px;
+    margin-top: 25px;
     font-size: 20px;
     color: #00214E;
 `;
@@ -18,6 +18,10 @@ export const IconeFood=styled(Pizza).attrs({
 }) 
     `align-self:center`;
 
+export const AlterarFoto= styled.TouchableOpacity `
+    align-self: center;
+    margin-top: 8px;
+`;
 export const BlocoQuantidade= styled.View `
     flex-direction: row;
     background-color: #fff;

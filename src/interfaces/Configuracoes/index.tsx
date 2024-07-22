@@ -4,7 +4,7 @@ export  function Configuracoes() {
   
     return (
         <Container>
-        <Text>Configuracoes</Text>
+        <Text></Text>
         </Container>
     );
   

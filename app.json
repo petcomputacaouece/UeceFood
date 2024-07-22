@@ -16,6 +16,14 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
+        }
+      ]
+    ],
     "sdkVersion": "51.0.0",
     "entryPoint": ".vscode\\exponentIndex.js"
   },

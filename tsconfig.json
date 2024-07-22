@@ -9,8 +9,8 @@
       "@assets/*": [
         "./src/assets/*"
       ],
-      "@components/*": [
-        "./src/components/*"
+      "@componentes/*": [
+        "./src/componentes/*"
       ],
       "@routes/*": [
         "./src/routes/*"
