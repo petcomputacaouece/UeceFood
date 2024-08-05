@@ -21,7 +21,7 @@ async function createDatabase() {
         // Cria a tabela 'Estabelecimento'
         await connection.query(`
             CREATE TABLE IF NOT EXISTS Estabelecimento (
-                idEstabelecimento INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+                id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
                 Nome CHAR(255), 
                 CNPJ_CPF CHAR(20) UNIQUE,
                 TipoEstabelecimento CHAR(255),
@@ -34,13 +34,13 @@ async function createDatabase() {
         // Cria a tabela 'Funcionario'
         await connection.query(`
             CREATE TABLE IF NOT EXISTS Funcionario (
-                idFuncionario INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+                id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
                 idEstabelecimento INT,
                 Nome CHAR(255),
                 Email CHAR(255) UNIQUE,
                 Senha CHAR(255),
                 Ativo BOOLEAN,
-                FOREIGN KEY (idEstabelecimento) REFERENCES Estabelecimento(idEstabelecimento)
+                FOREIGN KEY (idEstabelecimento) REFERENCES Estabelecimento(id)
             );
         `);
 
@@ -48,7 +48,7 @@ async function createDatabase() {
         // Falta a foto do produto
         await connection.query(`
             CREATE TABLE IF NOT EXISTS Produto (
-                idProduto INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+                id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
                 idEstabelecimento INT,
                 Nome CHAR(255),
                 Custo FLOAT,
@@ -57,23 +57,23 @@ async function createDatabase() {
                 Desconto VARCHAR(255),
                 Quantidade INT,
                 Ativo BOOLEAN,
-                FOREIGN KEY (idEstabelecimento) REFERENCES Estabelecimento(idEstabelecimento)
+                FOREIGN KEY (idEstabelecimento) REFERENCES Estabelecimento(id)
             );
         `);
 
         // Cria a tabela 'Venda'
         await connection.query(`
             CREATE TABLE IF NOT EXISTS Venda (
-                idVenda INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+                id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
                 idProduto INT,
                 idFuncionario INT,
                 idEstabelecimento INT, 
                 ValorTotal FLOAT,
                 FormaDePagamento CHAR(255),
                 DataHoraVenda DATETIME,
-                FOREIGN KEY (idProduto) REFERENCES Produto(idProduto),
-                FOREIGN KEY (idFuncionario) REFERENCES Funcionario(idFuncionario),
-                FOREIGN KEY (idEstabelecimento) REFERENCES Estabelecimento(idEstabelecimento)
+                FOREIGN KEY (idProduto) REFERENCES Produto(id),
+                FOREIGN KEY (idFuncionario) REFERENCES Funcionario(id),
+                FOREIGN KEY (idEstabelecimento) REFERENCES Estabelecimento(id)
             );
         `);
 
