@@ -33,7 +33,7 @@
   "android": {
     "adaptiveIcon": {
       "foregroundImage": "",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "transparent"
     }
   },
   "web": {

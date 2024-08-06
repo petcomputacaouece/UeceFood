@@ -19,7 +19,7 @@ export function Cadastro() {
    async function cadastrarUsuario(){
     try {
       //                             colocar a url do emulador e a porta 3000   
-      const response = await axios.post('http://192.168.0.12:3000/api/register-estabelecimento', {
+      const response = await axios.post('http://192.168.0.6:3000/api/register-estabelecimento', {
         Nome: nomeloja,
         CNPJ_CPF: CnpjCpf, // Substitua pelo CNPJ ou CPF válido
         TipoEstabelecimento: tipo,
@@ -34,6 +34,7 @@ export function Cadastro() {
       );
     } catch (error) {
       console.log("erro: ",error);
+      
     }
     
  }

@@ -1,4 +1,4 @@
-import { ButtonEditar, Container, Content, IconPizza,Text, TextButton, TextPreco, TextQuant} from "./styles";
+import { ButtonEditar, ButtonExcluir, Container, Content, IconPizza,Text, TextButton, TextPreco, TextQuant} from "./styles";
 type Props = {
     nome: string;
     custo: number;
@@ -21,7 +21,8 @@ export function FloatingBox({nome,custo,preco,precoMaq,quantidade}:Props){
 
             <TextPreco>R${preco}</TextPreco>
 
-            <ButtonEditar><TextButton>Editar</TextButton></ButtonEditar>
+            <Content><ButtonEditar><TextButton>Editar</TextButton></ButtonEditar>
+           <ButtonExcluir><TextButton>Excluir</TextButton></ButtonExcluir></Content>
         </Container>
        
     );

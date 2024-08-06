@@ -22,12 +22,12 @@ export function AppRoutes() {
     return (
         <Navigator screenOptions={{
             headerShown: false,
-            tabBarActiveTintColor: '#00214E',
+            tabBarActiveTintColor: '#000',
             tabBarInactiveTintColor: '#626262',
             tabBarStyle: { borderTopColor: '#ffe', backgroundColor: '#fff' }
         }}>
             <Screen
-                name="home"
+                name="Home"
                 component={HomeUser}
                 options={{
                     tabBarIcon: ({ color }) => (
@@ -36,7 +36,7 @@ export function AppRoutes() {
                 }}
             />
             <Screen
-                name="vendas"
+                name="Vendas"
                 component={Vendas}
                 options={{
                     tabBarIcon: ({ color }) => (
@@ -46,7 +46,7 @@ export function AppRoutes() {
 
             />
             <Screen
-                name="inventario"
+                name="Inventario"
                 component={Inventario}
                 options={{
                     tabBarIcon: ({ color }) => (
@@ -55,7 +55,7 @@ export function AppRoutes() {
                 }}
             />
             <Screen
-                name="analytics"
+                name="Analytics"
                 component={Analytics}
                 options={{
                     tabBarIcon: ({ color }) => (
@@ -64,7 +64,7 @@ export function AppRoutes() {
                 }}
             />
             <Screen
-                name="configurações"
+                name="Configurações"
                 component={Configuracoes}
                 options={{
                     tabBarIcon: ({ color }) => (

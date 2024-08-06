@@ -62,4 +62,16 @@ export const ButtonEditar=styled.TouchableOpacity`
     justify-content: center;
     align-items: center;
 
+`;export const ButtonExcluir=styled.TouchableOpacity`
+    background-color: #F483;
+    border-radius: 16px;
+
+    width: 63px;
+    height: 60px;
+    margin-top:12px;
+
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+
 `;
