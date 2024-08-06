@@ -12,9 +12,7 @@ export declare global{
 
             homeUser:undefined;
             vendas:undefined;
-            inventario:{
-                newProduto: ProdutoStorageDTO;
-            };
+            inventario:undefined;
             analytics:undefined;
             configuracoes:undefined;
             cadastrarProd:undefined;

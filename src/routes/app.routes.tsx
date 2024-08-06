@@ -27,7 +27,7 @@ export function AppRoutes() {
             tabBarStyle: { borderTopColor: '#ffe', backgroundColor: '#fff' }
         }}>
             <Screen
-                name="Home"
+                name="home"
                 component={HomeUser}
                 options={{
                     tabBarIcon: ({ color }) => (
@@ -36,7 +36,7 @@ export function AppRoutes() {
                 }}
             />
             <Screen
-                name="Vendas"
+                name="vendas"
                 component={Vendas}
                 options={{
                     tabBarIcon: ({ color }) => (
@@ -46,7 +46,7 @@ export function AppRoutes() {
 
             />
             <Screen
-                name="Inventario"
+                name="inventario"
                 component={Inventario}
                 options={{
                     tabBarIcon: ({ color }) => (
@@ -55,7 +55,7 @@ export function AppRoutes() {
                 }}
             />
             <Screen
-                name="Analytics"
+                name="analytics"
                 component={Analytics}
                 options={{
                     tabBarIcon: ({ color }) => (
@@ -64,7 +64,7 @@ export function AppRoutes() {
                 }}
             />
             <Screen
-                name="Configurações"
+                name="configurações"
                 component={Configuracoes}
                 options={{
                     tabBarIcon: ({ color }) => (

@@ -10,7 +10,7 @@ export function HeaderHomeUser({title,showCabecalho}:Props){
     const navigation= useNavigation();
 
     function inventario(){
-      navigation.navigate('inventario',{});
+      navigation.navigate('inventario');
   }
 
   

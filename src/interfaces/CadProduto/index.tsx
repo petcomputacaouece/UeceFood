@@ -54,7 +54,7 @@ export function CadProduto() {
       };
       await cadProduto(newProduto);
       console.log(newProduto);
-      navigation.navigate('inventario', { newProduto });
+      navigation.navigate('inventario');
 
     }
     catch (error) {
