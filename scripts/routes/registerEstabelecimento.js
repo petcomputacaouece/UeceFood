@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post('/register-estabelecimento', async (req, res) => {
     try {
-        const { Nome, CNPJ_CPF, TipoEstabelecimento, Email, Senha } = req.body;
+        const { Nome, CNPJ_CPF, TipoEstabelecimento, Email, Senha, Endereço } = req.body;
 
         // Verificar se o estabelecimento já existe
         const [rows] = await db.query('SELECT Email FROM Estabelecimento WHERE Email = ?', [Email]);
@@ -18,30 +18,12 @@ router.post('/register-estabelecimento', async (req, res) => {
         const hashedPassword = await bcrypt.hash(Senha, 10);
 
         // Inserir o novo estabelecimento no banco de dados
-        const [result] = await db.query(
-            'INSERT INTO Estabelecimento (Nome, CNPJ_CPF, TipoEstabelecimento, Email, Senha) VALUES (?, ?, ?, ?, ?)',
-            [Nome, CNPJ_CPF, TipoEstabelecimento, Email, hashedPassword]
+         await db.query(
+            'INSERT INTO Estabelecimento (Nome, CNPJ_CPF, TipoEstabelecimento, Email, Senha) VALUES (?, ?, ?, ?, ?, ?)',
+            [Nome, CNPJ_CPF, TipoEstabelecimento, Email, hashedPassword, Endereço]
         );
 
-        const idEstabelecimento = result.insertId;
-
-        // Criar a tabela de inventário para o novo estabelecimento
-        const inventarioTable = `Inventario_${idEstabelecimento}`;
-        const createInventarioTableQuery = `
-            CREATE TABLE ${inventarioTable} (
-                idInventario INT AUTO_INCREMENT PRIMARY KEY,
-                idProduto INT,
-                Nome CHAR(255),
-                Quantidade INT,
-                Custo FLOAT,
-                Valor FLOAT,
-                FOREIGN KEY (idProduto) REFERENCES Produto(idProduto)
-            );
-        `;
-
-        await db.query(createInventarioTableQuery);
-
-        res.status(201).json({ message: 'Estabelecimento e tabela de inventário criados com sucesso' });
+        res.status(201).json({ message: 'Estabelecimento criado com sucesso' });
     } catch (error) {
         res.status(500).json({ message: 'Erro no servidor', error });
     }
