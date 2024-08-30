@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post('/register-funcionario', async (req, res) => {
     try {
-        const { idEstabelecimento, Nome, Email, Senha } = req.body;
+        const { idEstabelecimento, Nome, Email, Senha, Ativo } = req.body;
 
         const [rows] = await db.query('SELECT Email FROM Funcionario WHERE Email = ?', [Email]);
         if (rows.length > 0) {
@@ -14,9 +14,10 @@ router.post('/register-funcionario', async (req, res) => {
         }
 
         const hashedPassword = await bcrypt.hash(Senha, 10);
+        
         await db.query(
-            'INSERT INTO Funcionario (idEstabelecimento, Nome, Email, Senha) VALUES (?, ?, ?, ?)',
-            [idEstabelecimento, Nome, Email, hashedPassword]
+            'INSERT INTO Funcionario (idEstabelecimento, Nome, Email, Senha, Ativo) VALUES (?, ?, ?, ?, ?)',
+            [idEstabelecimento, Nome, Email, hashedPassword, Ativo]
         );
 
         res.status(201).json({ message: 'Funcionário registrado com sucesso' });

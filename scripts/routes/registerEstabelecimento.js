@@ -8,16 +8,13 @@ router.post('/register-estabelecimento', async (req, res) => {
     try {
         const { Nome, CNPJ_CPF, TipoEstabelecimento, Email, Senha, Endereço } = req.body;
 
-        // Verificar se o estabelecimento já existe
         const [rows] = await db.query('SELECT Email FROM Estabelecimento WHERE Email = ?', [Email]);
         if (rows.length > 0) {
             return res.status(400).json({ message: 'Estabelecimento já existe' });
         }
 
-        // Hash da senha
         const hashedPassword = await bcrypt.hash(Senha, 10);
 
-        // Inserir o novo estabelecimento no banco de dados
          await db.query(
             'INSERT INTO Estabelecimento (Nome, CNPJ_CPF, TipoEstabelecimento, Email, Senha) VALUES (?, ?, ?, ?, ?, ?)',
             [Nome, CNPJ_CPF, TipoEstabelecimento, Email, hashedPassword, Endereço]
