@@ -5,18 +5,16 @@ const router = express.Router();
 
 router.post('/register-produto', async (req, res) => {
     try {
-        const { idEstabelecimento, Nome, Custo, Preco, PrecoNaMaquina, Desconto } = req.body;
+        const { idEstabelecimento, Nome, Custo, Preco, PrecoNaMaquina, Desconto, Quantidade, Ativo } = req.body;
 
-        // Verificar se o estabelecimento existe
-        const [rows] = await db.query('SELECT idEstabelecimento FROM Estabelecimento WHERE idEstabelecimento = ?', [idEstabelecimento]);
+        const [rows] = await db.query('SELECT id FROM Estabelecimento WHERE id = ?', [idEstabelecimento]);
         if (rows.length === 0) {
             return res.status(400).json({ message: 'Estabelecimento não encontrado' });
         }
 
-        // Inserir o novo produto no banco de dados
         await db.query(
-            'INSERT INTO Produto (idEstabelecimento, Nome, Custo, Preco, PrecoNaMaquina, Desconto) VALUES (?, ?, ?, ?, ?, ?)',
-            [idEstabelecimento, Nome, Custo, Preco, PrecoNaMaquina, Desconto]
+            'INSERT INTO Produto (idEstabelecimento, Nome, Custo, Preco, PrecoNaMaquina, Desconto, Quantidade, Ativo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+            [idEstabelecimento, Nome, Custo, Preco, PrecoNaMaquina, Desconto, Quantidade, Ativo]
         );
 
         res.status(201).json({ message: 'Produto registrado com sucesso' });
