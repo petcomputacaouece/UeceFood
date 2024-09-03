@@ -8,9 +8,14 @@ router.post('/register-estabelecimento', async (req, res) => {
     try {
         const { Nome, CNPJ_CPF, TipoEstabelecimento, Email, Senha, Endereço } = req.body;
 
-        const [rows] = await db.query('SELECT Email FROM Estabelecimento WHERE Email = ?', [Email]);
-        if (rows.length > 0) {
+        const [rowsEmail] = await db.query('SELECT Email FROM Estabelecimento WHERE Email = ?', [Email]);
+        if (rowsEmail.length > 0) {
             return res.status(400).json({ message: 'Email já está em uso' });
+        }
+
+        const [rowsCNPJ_CPF] = await db.query('SELECT CNPJ_CPF FROM Estabelecimento WHERE CNPJ_CPF = ?', [CNPJ_CPF]);
+        if (rowsCNPJ_CPF.length > 0) {
+            return res.status(400).json({ message: 'CNPJ/CPF já está em uso' });
         }
 
         const hashedPassword = await bcrypt.hash(Senha, 10);
