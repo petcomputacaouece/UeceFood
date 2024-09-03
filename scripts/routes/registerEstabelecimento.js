@@ -12,12 +12,12 @@ router.post('/register-estabelecimento', async (req, res) => {
 
         const [rowsEmail] = await db.query('SELECT Email FROM Estabelecimento WHERE Email = ?', [Email]);
         if (rowsEmail.length > 0) {
-            errors.push({ message: 'Email já está em uso333' });
+            errors.push({ message: 'Email já está em uso' });
         }
 
         const [rowsCNPJ_CPF] = await db.query('SELECT CNPJ_CPF FROM Estabelecimento WHERE CNPJ_CPF = ?', [CNPJ_CPF]);
         if (rowsCNPJ_CPF.length > 0) {
-            errors.push({ message: 'CNPJ/CPF já está em uso333' });
+            errors.push({ message: 'CNPJ/CPF já está em uso' });
         }
 
         if (errors.length > 0) {
