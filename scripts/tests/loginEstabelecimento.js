@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-async function login(){
+async function testLoginEstabelecimento(){
     try {
         const response = await axios.post('http://localhost:3000/api/login', {
             Email:"meo@example.com", 
@@ -13,4 +13,4 @@ async function login(){
 }
 }
 
-login();
+testLoginEstabelecimento();

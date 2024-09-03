@@ -10,7 +10,7 @@ router.post('/register-funcionario', async (req, res) => {
 
         const [rows] = await db.query('SELECT Email FROM Funcionario WHERE Email = ?', [Email]);
         if (rows.length > 0) {
-            return res.status(400).json({ message: 'Funcionário já existe' });
+            return res.status(400).json({ message: 'Email já está em uso' });
         }
 
         const hashedPassword = await bcrypt.hash(Senha, 10);

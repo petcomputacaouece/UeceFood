@@ -18,7 +18,6 @@ async function createDatabase() {
         // Seleciona o banco de dados
         await connection.query('USE uece_food_db');
 
-        // Cria a tabela 'Estabelecimento'
         await connection.query(`
             CREATE TABLE IF NOT EXISTS Estabelecimento (
                 id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -31,7 +30,6 @@ async function createDatabase() {
             );
         `);
 
-        // Cria a tabela 'Funcionario'
         await connection.query(`
             CREATE TABLE IF NOT EXISTS Funcionario (
                 id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -44,7 +42,6 @@ async function createDatabase() {
             );
         `);
 
-        // Cria a tabela 'Produto'
         // Falta a foto do produto
         await connection.query(`
             CREATE TABLE IF NOT EXISTS Produto (
@@ -61,7 +58,6 @@ async function createDatabase() {
             );
         `);
 
-        // Cria a tabela 'Venda'
         await connection.query(`
             CREATE TABLE IF NOT EXISTS Venda (
                 id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
