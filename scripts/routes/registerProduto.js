@@ -12,6 +12,10 @@ router.post('/register-produto', async (req, res) => {
             return res.status(400).json({ message: 'Estabelecimento não encontrado' });
         }
 
+        if (await produtoJaExiste(Nome)) {
+            return res.status(400).json({ message: 'Produto já existe' });
+        }
+
         await db.query(
             'INSERT INTO Produto (idEstabelecimento, Nome, Custo, Preco, PrecoNaMaquina, Desconto, Quantidade, Ativo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
             [idEstabelecimento, Nome, Custo, Preco, PrecoNaMaquina, Desconto, Quantidade, Ativo]
@@ -22,5 +26,13 @@ router.post('/register-produto', async (req, res) => {
         res.status(500).json({ message: 'Erro no servidor', error });
     }
 });
+
+async function produtoJaExiste(Nome) {
+    const [rows] = await db.query('SELECT id FROM Produto WHERE Nome = ?', [Nome]);
+    if (rows.length > 0) {
+        return true;
+    }
+    return false;
+}
 
 module.exports = router;
