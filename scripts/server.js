@@ -1,4 +1,6 @@
 const express = require('express');
+const fileSystemFunc = require('./fileSystemFunctions')
+
 
 const estabelecimentoRouter = require('./routes/registerEstabelecimento.js'); // Caminho para o arquivo registerEstabelecimento.js
 const funcionarioRouter = require('./routes/registerFuncionario.js'); // Caminho para o arquivo registerFuncionario
@@ -7,6 +9,7 @@ const produtoRouter = require('./routes/registerProduto.js'); // Caminho para o 
 const vendaRouter = require('./routes/registerVenda.js'); // Caminho para o arquivo registerVenda.js
 const userRouter = require('./routes/register.js'); // Caminho para o arquivo register.js
 const loginRoute = require('./routes/login'); //caminho para o arquivo login.js
+const uploadImageRoute = require('./routes/uploadImagem');//
 
 const app = express();
 const port = 3000;
@@ -22,9 +25,14 @@ app.use('/api', funcionarioRouter);
 app.use('/api', enderecoRouter);
 app.use('/api', produtoRouter);
 app.use('/api', vendaRouter);
-app.use('/api', loginRoute)
+app.use('/api', loginRoute);
+app.use('/api', uploadImageRoute);
 
 
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
 });
+
+
+//verifica os arquivos do fileSystem, por via de teste pode apagar o caminho e fileSystemm e rodar o sever.js que vao ser criados dnv
+fileSystemFunc.fileSystemVerify();
