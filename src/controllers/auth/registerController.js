@@ -1,20 +1,30 @@
-const User = require('../../models/User');
-const bcrypt = require('bcrypt');
+// controllers/registerController.js
+const registerService = require('../services/registerService');
 
-exports.register = async (req, res) => {
-  const { name, email, password } = req.body;
+const registerUser = async (req, res) => {
+    try {
+        const { nome, cpf, dataNascimento, id, endereco, estabelecimento, cargo, email, senha } = req.body;
 
-  try {
-    const existingUser = await User.findOne({ where: { email } });
-    if (existingUser) {
-      return res.status(400).json({ message: 'E-mail já registrado.' });
+        if (!nome || !cpf || !dataNascimento || !id || !endereco || !estabelecimento || !cargo || !email || !senha) {
+            return res.status(400).json({ message: 'Todos os campos são obrigatórios' });
+        }
+
+        const result = await registerService.createUser({
+            nome,
+            cpf,
+            dataNascimento,
+            id,
+            endereco,
+            estabelecimento,
+            cargo,
+            email,
+            senha
+        });
+
+        return res.status(201).json({ message: 'Usuário registrado com sucesso', user: result });
+    } catch (error) {
+        res.status(500).json({ message: 'Erro ao registrar o usuário', error: error.message });
     }
-
-    const hashedPassword = await bcrypt.hash(password, 10);
-    const user = await User.create({ name, email, password: hashedPassword });
-
-    res.status(201).json({ message: 'Usuário registrado com sucesso.', user });
-  } catch (error) {
-    res.status(500).json({ message: 'Erro ao registrar usuário.' });
-  }
 };
+
+module.exports = { registerUser };
